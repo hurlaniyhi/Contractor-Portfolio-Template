@@ -130,7 +130,7 @@ class servicePage extends React.Component{
                     </div>
                     <div className="servicefreeConsultant2">
                         <p className="serviceconsultantText1">GET YOUR FREE CONSULTANT</p>
-                        <p className="serviceconsultantText2">We are a company that offers design and build services for you from initial<br/>sketches to the final construction</p>
+                        <p className="serviceconsultantText2">We are a company that offers design and build services for you from initial sketches to the final construction</p>
                         <div className="serviceconsultantBox">CONTACT US <BsFillForwardFill /></div>
                     </div>
                 </div>

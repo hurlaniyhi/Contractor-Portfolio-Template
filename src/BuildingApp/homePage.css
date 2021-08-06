@@ -1834,7 +1834,7 @@ body,html{
         height:58%;
     }   
 }
-@media screen and (max-width:1025px) and (min-width:800px) {
+@media screen and (max-width:1025px) and (min-width:769px) {
     .headTopText{
         width:40%
     }
@@ -1870,7 +1870,7 @@ body,html{
         margin-left:20px;
     }
 }
-@media screen and (max-width:800px) and (min-width:600px){
+@media screen and (max-width:769px) and (min-width:551px){
     .headTopText{
         width:40%
     }

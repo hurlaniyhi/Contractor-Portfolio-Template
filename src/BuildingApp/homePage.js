@@ -79,14 +79,19 @@ class homePage extends React.Component{
         ) 
         const callback = function(entries){
             entries.forEach(entry => {
-                entry.target.classList.toggle("atImgAnimate")
+                if(entry.isIntersecting){
+                    entry.target.classList.add("atImgAnimate")
+                }
+                else{
+                    entry.target.classList.remove("atImgAnimate")
+                }
             })
         }
 
-        const observer = new IntersectionObserver(callback)
+        const observer = new IntersectionObserver(callback);
 
-        const targets = document.querySelectorAll(".atImg")
-        targets.forEach(function(target){
+        const targets = document.querySelectorAll(".atImg");
+        targets.forEach(target =>{
             observer.observe(target)
         })
     }
