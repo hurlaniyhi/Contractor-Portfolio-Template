@@ -52,33 +52,71 @@ class aboutPage extends React.Component{
         })
     }
 
+    componentDidMount(){
+        const callback = function(entries){
+            entries.forEach(entry => {
+                if(entry.isIntersecting){
+                    entry.target.classList.add("aboutatImgAnimate")
+                }
+                else{
+                    entry.target.classList.remove("aboutatImgAnimate")
+                }
+            })
+        }
+
+        const observer = new IntersectionObserver(callback);
+
+        const targets = document.querySelectorAll(".aboutatImg");
+        targets.forEach(target =>{
+            observer.observe(target)
+        }) 
+        const callbac = function(entries){
+            entries.forEach(entry => {
+                if(entry.isIntersecting){
+                    entry.target.classList.add("opaque")
+                }
+                else{
+                    entry.target.classList.remove("opaque")
+                }
+            })
+        }
+
+        const observe = new IntersectionObserver(callbac);
+
+        const target = (document.querySelectorAll(".testing")
+        );
+        target.forEach(target =>{
+            observe.observe(target)
+        }) 
+    }
+
     render(){
         return(
             <div>
-                <div className="aboutheadTop">
+                <div className="aboutheadTop testing">
                     <div className="aboutheadTopText"><p className="aboutheadTopTextPara">WE HAVE MORE THAN 25 YEARS OF EXPERIENCES</p></div>
                     <p className="aboutnav1">SITEMAP&nbsp;&nbsp;&nbsp;&nbsp;|</p>
                     <p className="aboutnav2">&nbsp;&nbsp;&nbsp;&nbsp;QUICK LINKS&nbsp;&nbsp;&nbsp;&nbsp;|</p>
                     <p className="aboutnav3">&nbsp;&nbsp;&nbsp;&nbsp;SUPPORT&nbsp;&nbsp;&nbsp;&nbsp;|</p>
                     <div className="aboutnav4">&nbsp;&nbsp;&nbsp;&nbsp;<FaSearch style={{marginBottom:"0px"}} />&nbsp;&nbsp;&nbsp;&nbsp;</div>
                 </div>
-                <div className="aboutheadTop2">
+                <div className="aboutheadTop2 testing">
                     <img className="aboutlogo1" src={logo1} />
-                    <div className="aboutlogo2Box">
+                    <div className="aboutlogo2Box testing">
                         <VscLocation className="aboutlogo" style={{opacity:"0.5"}} />
                         <p className="aboutlogoText"><span className="aboutlogoText1">FIND US</span><br/><span className="aboutlogoText2">22B, LONDON</span></p>
                     </div>
-                    <div className="aboutlogo3Box">
+                    <div className="aboutlogo3Box testing">
                         <GiSmartphone className="aboutlogo" style={{opacity:"0.5"}} />
                         <p className="aboutlogoText"><span className="aboutlogoText1">CALL US TODAY</span><br/><span className="aboutlogoText2">+000-2415-145</span></p>
                     </div>
-                    <div className="aboutlogo4Box">
+                    <div className="aboutlogo4Box testing">
                         <AiOutlineMail className="aboutlogo" style={{opacity:"0.5"}} />
                         <p className="aboutlogoText"><span className="aboutlogoText1">EMAIL US NOW</span><br/><span className="aboutlogoText2">SITENAME@EMAIL.COM</span></p>
                     </div>
                 </div>
-                <div className="aboutNavContainer">
-                    <div className="aboutheadTop3">
+                <div className="aboutNavContainer testing">
+                    <div className="aboutheadTop3 testing">
                         <div className="aboutheadTop31 aboutht3" onClick={()=>this.homePage()} ><p className="aboutnavText1 aboutnavText">HOME</p></div>
                         <div className="aboutheadTop32 aboutht3"><p className="aboutnavText2 aboutnavText">ABOUT</p></div>
                         <div className="aboutheadTop33 aboutht3" onClick={()=>this.servicePage()} ><p className="aboutnavText3 aboutnavText">SERVICES</p></div>
@@ -87,18 +125,18 @@ class aboutPage extends React.Component{
                         <div className="aboutheadTop36 aboutht3" onClick={()=>this.contactUsPage()} ><p className="aboutnavText6 aboutnavText">CONTACTS</p></div>
                         <div className="aboutheadTop37"><p className="aboutnavText7">INQUERY TODAY</p></div>
                     </div>
-                    <p className="aboutUs">ABOUT US</p>
-                    <p className="aboutUsInfo">
+                    <p className="aboutUs testing">ABOUT US</p>
+                    <p className="aboutUsInfo testing">
                         Claritas est etiam processus dynamicus, qui sequitur<br/>
                         mutationem consuetudium lectorum.
                     </p>
                 </div>
-                <div className="additionalInfoBox">
-                    <div className="image22Box">
+                <div className="additionalInfoBox testing">
+                    <div className="image22Box testing">
                         <img src={image22} className="image22"/>
                     </div>
-                    <img src={image22} className="image222" />
-                    <div className="image22TextInfo">
+                    <img src={image22} className="image222 testing" />
+                    <div className="image22TextInfo testing">
                         Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie
                         consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan
                         et iusto odio dignissim qui blandit praesent uptatum zzril delenit augue duis
@@ -109,9 +147,9 @@ class aboutPage extends React.Component{
                         decima et quinta decima.
                     </div>
                 </div>
-                <div className="allInfoBox">
-                    <div className="infosBox">
-                        <div className="whoWeAre">
+                <div className="allInfoBox testing">
+                    <div className="infosBox testing">
+                        <div className="whoWeAre testing">
                             <p className="infoTopic">WHO WE ARE</p>
                             <p className="infoMessage">
                                 Duis autem vel eum iriure dolor in hendrerit in velit esse
@@ -120,7 +158,7 @@ class aboutPage extends React.Component{
                                 luptatum.
                             </p>
                         </div>
-                        <div className="biography">
+                        <div className="biography testing">
                             <p className="infoTopic">BIOGRAPHY</p>
                             <p className="infoMessage">
                                 Duis autem vel eum iriure dolor in hendrerit in velit esse
@@ -129,7 +167,7 @@ class aboutPage extends React.Component{
                                 luptatum.
                             </p>
                         </div>
-                        <div className="ourMission">
+                        <div className="ourMission testing">
                             <p className="infoTopic">OUR MISSION</p>
                             <p className="infoMessage">
                                 Duis autem vel eum iriure dolor in hendrerit in velit esse
@@ -138,7 +176,7 @@ class aboutPage extends React.Component{
                                 luptatum.
                             </p>
                         </div>
-                        <div className="awards">
+                        <div className="awards testing">
                             <p className="infoTopic">AWARDS</p>
                             <p className="infoMessage">
                                 Duis autem vel eum iriure dolor in hendrerit in velit esse
@@ -148,25 +186,25 @@ class aboutPage extends React.Component{
                             </p>
                         </div>
                     </div>
-                    <img src={image23} className="image23" />
+                    <img src={image23} className="image23 testing" />
                 </div>
-                <div className="aboutfreeConsultant">
-                    <div className="aboutfreeConsultant1">
+                <div className="aboutfreeConsultant testing">
+                    <div className="aboutfreeConsultant1 testing">
 
                     </div>
-                    <div className="aboutfreeConsultant2">
+                    <div className="aboutfreeConsultant2 testing">
                         <p className="aboutconsultantText1">GET YOUR FREE CONSULTANT</p>
                         <p className="aboutconsultantText2">We are a company that offers design and build services for you from initial sketches to the final construction</p>
                         <div className="aboutconsultantBox">CONTACT US <BsFillForwardFill /></div>
                     </div>
                 </div>
-                <div className="aboutawesomeTeamBox">
+                <div className="aboutawesomeTeamBox testing">
                     <p className="aboutawesomeTeamText1"><span style={{color:"rgb(32,46,49)"}}>AWESOME</span> <span style={{color:"rgb(253,194,54)"}}>TEAM</span></p>
                     <p className="aboutawesomeTeamText2">Claritas est etiam processus dynamicus, qui sequitur<br/>mutationem consuetudium lectorum</p>
                     <div className="aboutawesomeTeamPictures">
                         <div className="aboutawesomeTeamImg aboutawesomeTeamImg1">
                             <div className="aboutat1 aboutat11"></div>
-                            <img src={image12} className="aboutimage12 aboutatImg" />
+                            <img src={image12} className="aboutimage12 aboutatImg aboutatImg" />
                             <div className="aboutat2">
                                 <p className="abouttxt1">HASIB SHARIF</p>
                                 <p className="abouttxt2">CHIEF ACHITECT</p>
@@ -178,7 +216,7 @@ class aboutPage extends React.Component{
                         </div>
                         <div className="aboutawesomeTeamImg aboutawesomeTeamImg2">
                             <div className="aboutat1 aboutat12"></div>
-                            <img src={image13} className="aboutimage13 aboutatImg" />
+                            <img src={image13} className="aboutimage13 aboutatImg aboutatImg" />
                             <div className="aboutat2">
                                 <p className="abouttxt1">TAHIRATUZZOHORA</p>
                                 <p className="abouttxt2">CHIEF ACHITECT</p>
@@ -190,7 +228,7 @@ class aboutPage extends React.Component{
                         </div>
                         <div className="aboutawesomeTeamImg aboutawesomeTeamImg3">
                             <div className="aboutat1 aboutat13"></div>
-                            <img src={image14} className="aboutimage14 aboutatImg" />
+                            <img src={image14} className="aboutimage14 aboutatImg aboutatImg" />
                             <div className="aboutat2">
                                 <p className="abouttxt1">DAVID MAMAN</p>
                                 <p className="abouttxt2">CHIEF ACHITECT</p>
@@ -202,11 +240,11 @@ class aboutPage extends React.Component{
                         </div>
                     </div>
                 </div>
-                <div className="aboutbottom">
-                    <div className="aboutbottomFirst">
-                        <div className="aboutbottomFirst1">
-                            <img src={image19} className="aboutimage19" />
-                            <p className="aboutimage19Text">
+                <div className="aboutbottom testing">
+                    <div className="aboutbottomFirst testing">
+                        <div className="aboutbottomFirst1 testing">
+                            <img src={image19} className="aboutimage19 testing" />
+                            <p className="aboutimage19Text testing">
                                 Duis autem vel eum iriure dolor in<br/>
                                 hendrerit in vulputate velit esse molestie<br/>
                                 consequat, vel illum dolo re eu feugiat<br/>
@@ -214,7 +252,7 @@ class aboutPage extends React.Component{
                                 et iusto odio.
                             </p>
                         </div>
-                        <div className="aboutbottomFirst2">
+                        <div className="aboutbottomFirst2 testing">
                             <p className="aboutfirstBottomHead">IMPORTANT LINKS</p>
                             <div className="aboutfirstBottomLinks">
                                 <p className="aboutfirstBottomLink1">Themeforest</p>
@@ -224,7 +262,7 @@ class aboutPage extends React.Component{
                                 <p className="aboutfirstBottomLink5">Photodune</p>
                             </div>
                         </div>
-                        <div className="aboutbottomFirst3">
+                        <div className="aboutbottomFirst3 testing">
                             <p className="aboutsecondBottomHead">QUICK LINKS</p>
                             <div className="aboutsecondBottomLinks">
                                 <p className="aboutsecondBottomLink1">Faq</p>
@@ -234,7 +272,7 @@ class aboutPage extends React.Component{
                                 <p className="aboutsecondBottomLink5">Pricing</p>
                             </div>
                         </div>
-                        <div className="aboutbottomFirst4">
+                        <div className="aboutbottomFirst4 testing">
                             <p className="aboutthirdBottomHead">ADDRESS</p>
                             <div className="aboutthirdBottomLinks">
                                 <p className="aboutthirdBottomLink1"><span style={{fontWeight:"bold"}}>HEAD OFFICE:</span>&nbsp;&nbsp;22B, Becar Street<br/>London, UK</p>
@@ -247,7 +285,7 @@ class aboutPage extends React.Component{
                             </div>
                         </div>
                     </div>
-                    <div className="aboutbottomSecond">
+                    <div className="aboutbottomSecond testing">
                         <p className="aboutbottomSecondText">2021©All Rights Reserved by Themexriver</p>
                     </div>
                 </div>

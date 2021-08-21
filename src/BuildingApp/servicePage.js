@@ -45,32 +45,53 @@ class servicePage extends React.Component{
         document.querySelector(".serviceheadTop3").id="margin"
     }
 
+    componentDidMount(){
+        const callbac = function(entries){
+            entries.forEach(entry => {
+                if(entry.isIntersecting){
+                    entry.target.classList.add("opaque")
+                }
+                else{
+                    entry.target.classList.remove("opaque")
+                }
+            })
+        }
+
+        const observe = new IntersectionObserver(callbac);
+
+        const target = (document.querySelectorAll(".testing")
+        );
+        target.forEach(target =>{
+            observe.observe(target)
+        }) 
+    }
+
     render(){
         return(
             <div>
-                <div className="serviceheadTop">
+                <div className="serviceheadTop testing">
                     <div className="serviceheadTopText"><p className="serviceheadTopTextPara">WE HAVE MORE THAN 25 YEARS OF EXPERIENCES</p></div>
                     <p className="servicenav1">SITEMAP&nbsp;&nbsp;&nbsp;&nbsp;|</p>
                     <p className="servicenav2">&nbsp;&nbsp;&nbsp;&nbsp;QUICK LINKS&nbsp;&nbsp;&nbsp;&nbsp;|</p>
                     <p className="servicenav3">&nbsp;&nbsp;&nbsp;&nbsp;SUPPORT&nbsp;&nbsp;&nbsp;&nbsp;|</p>
                     <div className="servicenav4">&nbsp;&nbsp;&nbsp;&nbsp;<FaSearch style={{marginBottom:"0px"}} />&nbsp;&nbsp;&nbsp;&nbsp;</div>
                 </div>
-                <div className="serviceheadTop2">
+                <div className="serviceheadTop2 testing">
                     <img className="servicelogo1" src={logo1} alt="" />
-                    <div className="servicelogo2Box">
+                    <div className="servicelogo2Box testing">
                         <VscLocation className="servicelogo" style={{opacity:"0.5"}} />
                         <p className="servicelogoText"><span className="servicelogoText1">FIND US</span><br/><span className="servicelogoText2">22B, LONDON</span></p>
                     </div>
-                    <div className="servicelogo3Box">
+                    <div className="servicelogo3Box testing">
                         <GiSmartphone className="servicelogo" style={{opacity:"0.5"}} />
                         <p className="servicelogoText"><span className="servicelogoText1">CALL US TODAY</span><br/><span className="servicelogoText2">+000-2415-145</span></p>
                     </div>
-                    <div className="servicelogo4Box">
+                    <div className="servicelogo4Box testing">
                         <AiOutlineMail className="servicelogo" style={{opacity:"0.5"}} />
                         <p className="servicelogoText"><span className="servicelogoText1">EMAIL US NOW</span><br/><span className="servicelogoText2">SITENAME@EMAIL.COM</span></p>
                     </div>
                 </div>
-                <div className="serviceNavContainer">
+                <div className="serviceNavContainer testing">
                     <div className="serviceheadTop3">
                         <div className="serviceheadTop31 serviceht3" onClick={()=>this.homePage()} ><p className="servicenavText1 servicenavText">HOME</p></div>
                         <div className="serviceheadTop32 serviceht3" onClick={()=>this.aboutPage()} ><p className="servicenavText2 servicenavText">ABOUT</p></div>
@@ -80,65 +101,65 @@ class servicePage extends React.Component{
                         <div className="serviceheadTop36 serviceht3" onClick={()=>this.contactUsPage()} ><p className="servicenavText6 servicenavText">CONTACTS</p></div>
                         <div className="serviceheadTop37"><p className="servicenavText7">INQUERY TODAY</p></div>
                     </div>
-                    <p className="serviceUs">OUR SERVICES</p>
-                    <p className="serviceUsInfo">
+                    <p className="serviceUs testing">OUR SERVICES</p>
+                    <p className="serviceUsInfo testing">
                         Claritas est etiam processus dynamicus, qui sequitur<br/>
                         mutationem consuetudium lectorum.
                     </p>
                 </div>
-                <div className="servicerenovation">
-                    <div className="servicerenovation1 servicerenovationBox" style={{textAlign:"center",boxSizing:"border-box",border:"1px solid rgb(224,224,224)"}} >
+                <div className="servicerenovation testing">
+                    <div className="servicerenovation1 servicerenovationBox testing" style={{textAlign:"center",boxSizing:"border-box",border:"1px solid rgb(224,224,224)"}} >
                         <img src={image3} className="servicerenovationImage serviceimg3" />
                         <p className="servicerenovationText1">BEST RENOVATION</p>
                         <p className="servicerenovationText2">Claritas est etiam processus dynamicus, qui sequitur<br/>mutationem</p>
                         <p className="servicerenovationText3">READ MORE</p>
                     </div>
-                    <div className="servicerenovation2 servicerenovationBox" style={{textAlign:"center",boxSizing:"border-box",border:"1px solid rgb(224,224,224)"}} >
+                    <div className="servicerenovation2 servicerenovationBox testing" style={{textAlign:"center",boxSizing:"border-box",border:"1px solid rgb(224,224,224)"}} >
                         <img src={image4} className="servicerenovationImage serviceimg4"/>
                         <p className="servicerenovationText1">BEST RENOVATION</p>
                         <p className="servicerenovationText2">Claritas est etiam processus dynamicus, qui sequitur<br/>mutationem</p>
                         <p className="servicerenovationText3">READ MORE</p>
                     </div>
-                    <div className="servicerenovation3 servicerenovationBox" style={{textAlign:"center",boxSizing:"border-box",border:"1px solid rgb(224,224,224)"}} >
+                    <div className="servicerenovation3 servicerenovationBox testing" style={{textAlign:"center",boxSizing:"border-box",border:"1px solid rgb(224,224,224)"}} >
                         <img src={image5} className="servicerenovationImage serviceimg5"/>
                         <p className="servicerenovationText1">BEST RENOVATION</p>
                         <p className="servicerenovationText2">Claritas est etiam processus dynamicus, qui sequitur<br/>mutationem</p>
                         <p className="servicerenovationText3">READ MORE</p>
                     </div>
-                    <div className="servicerenovation4 servicerenovationBox" style={{textAlign:"center",boxSizing:"border-box",border:"1px solid rgb(224,224,224)"}} >
+                    <div className="servicerenovation4 servicerenovationBox testing" style={{textAlign:"center",boxSizing:"border-box",border:"1px solid rgb(224,224,224)"}} >
                         <img src={image5} className="servicerenovationImage serviceimg3" />
                         <p className="servicerenovationText1">BEST RENOVATION</p>
                         <p className="servicerenovationText2">Claritas est etiam processus dynamicus, qui sequitur<br/>mutationem</p>
                         <p className="servicerenovationText3">READ MORE</p>
                     </div>
-                    <div className="servicerenovation5 servicerenovationBox" style={{textAlign:"center",boxSizing:"border-box",border:"1px solid rgb(224,224,224)"}} >
+                    <div className="servicerenovation5 servicerenovationBox testing" style={{textAlign:"center",boxSizing:"border-box",border:"1px solid rgb(224,224,224)"}} >
                         <img src={image3} className="servicerenovationImage serviceimg4"/>
                         <p className="servicerenovationText1">BEST RENOVATION</p>
                         <p className="servicerenovationText2">Claritas est etiam processus dynamicus, qui sequitur<br/>mutationem</p>
                         <p className="servicerenovationText3">READ MORE</p>
                     </div>
-                    <div className="servicerenovation6 servicerenovationBox" style={{textAlign:"center",boxSizing:"border-box",border:"1px solid rgb(224,224,224)"}} >
+                    <div className="servicerenovation6 servicerenovationBox testing" style={{textAlign:"center",boxSizing:"border-box",border:"1px solid rgb(224,224,224)"}} >
                         <img src={image4} className="servicerenovationImage serviceimg5"/>
                         <p className="servicerenovationText1">BEST RENOVATION</p>
                         <p className="servicerenovationText2">Claritas est etiam processus dynamicus, qui sequitur<br/>mutationem</p>
                         <p className="servicerenovationText3">READ MORE</p>
                     </div>
                 </div>
-                <div className="servicefreeConsultant">
-                    <div className="servicefreeConsultant1">
+                <div className="servicefreeConsultant testing">
+                    <div className="servicefreeConsultant1 testing">
 
                     </div>
-                    <div className="servicefreeConsultant2">
+                    <div className="servicefreeConsultant2 testing">
                         <p className="serviceconsultantText1">GET YOUR FREE CONSULTANT</p>
                         <p className="serviceconsultantText2">We are a company that offers design and build services for you from initial sketches to the final construction</p>
                         <div className="serviceconsultantBox">CONTACT US <BsFillForwardFill /></div>
                     </div>
                 </div>
-                <div className="servicebottom">
-                    <div className="servicebottomFirst">
-                        <div className="servicebottomFirst1">
-                            <img src={image19} className="serviceimage19" />
-                            <p className="serviceimage19Text">
+                <div className="servicebottom testing">
+                    <div className="servicebottomFirst testing">
+                        <div className="servicebottomFirst1 testing">
+                            <img src={image19} className="serviceimage19 testing" />
+                            <p className="serviceimage19Text testing">
                                 Duis autem vel eum iriure dolor in<br/>
                                 hendrerit in vulputate velit esse molestie<br/>
                                 consequat, vel illum dolo re eu feugiat<br/>
@@ -146,7 +167,7 @@ class servicePage extends React.Component{
                                 et iusto odio.
                             </p>
                         </div>
-                        <div className="servicebottomFirst2">
+                        <div className="servicebottomFirst2 testing">
                             <p className="servicefirstBottomHead">IMPORTANT LINKS</p>
                             <div className="servicefirstBottomLinks">
                                 <p className="servicefirstBottomLink1">Themeforest</p>
@@ -156,7 +177,7 @@ class servicePage extends React.Component{
                                 <p className="servicefirstBottomLink5">Photodune</p>
                             </div>
                         </div>
-                        <div className="servicebottomFirst3">
+                        <div className="servicebottomFirst3 testing">
                             <p className="servicesecondBottomHead">QUICK LINKS</p>
                             <div className="servicesecondBottomLinks">
                                 <p className="servicesecondBottomLink1">Faq</p>
@@ -166,7 +187,7 @@ class servicePage extends React.Component{
                                 <p className="servicesecondBottomLink5">Pricing</p>
                             </div>
                         </div>
-                        <div className="servicebottomFirst4">
+                        <div className="servicebottomFirst4 testing">
                             <p className="servicethirdBottomHead">ADDRESS</p>
                             <div className="servicethirdBottomLinks">
                                 <p className="servicethirdBottomLink1"><span style={{fontWeight:"bold"}}>HEAD OFFICE:</span>&nbsp;&nbsp;22B, Becar Street<br/>London, UK</p>
@@ -179,7 +200,7 @@ class servicePage extends React.Component{
                             </div>
                         </div>
                     </div>
-                    <div className="servicebottomSecond">
+                    <div className="servicebottomSecond testing">
                         <p className="servicebottomSecondText">2021©All Rights Reserved by Themexriver</p>
                     </div>
                 </div>

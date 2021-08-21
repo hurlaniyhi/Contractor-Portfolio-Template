@@ -93,7 +93,26 @@ class homePage extends React.Component{
         const targets = document.querySelectorAll(".atImg");
         targets.forEach(target =>{
             observer.observe(target)
-        })
+        }) 
+        
+        const callbac = function(entries){
+            entries.forEach(entry => {
+                if(entry.isIntersecting){
+                    entry.target.classList.add("opaque")
+                }
+                else{
+                    entry.target.classList.remove("opaque")
+                }
+            })
+        }
+
+        const observe = new IntersectionObserver(callbac);
+
+        const target = (document.querySelectorAll(".testing")
+        );
+        target.forEach(target =>{
+            observe.observe(target)
+        }) 
     }
 
     categories = (first,second,third,fourth,fifth,sixth,seventh,eighth,ninth,tenth) =>{
@@ -137,14 +156,14 @@ class homePage extends React.Component{
 
         return(
             <div>
-                <div className="headTop">
+                <div className="headTop testing">
                     <div className="headTopText"><p className="headTopTextPara">WE HAVE MORE THAN 25 YEARS OF EXPERIENCES</p></div>
                     <p className="nav1">SITEMAP&nbsp;&nbsp;&nbsp;&nbsp;|</p>
                     <p className="nav2">&nbsp;&nbsp;&nbsp;&nbsp;QUICK LINKS&nbsp;&nbsp;&nbsp;&nbsp;|</p>
                     <p className="nav3">&nbsp;&nbsp;&nbsp;&nbsp;SUPPORT&nbsp;&nbsp;&nbsp;&nbsp;|</p>
                     <div className="nav4">&nbsp;&nbsp;&nbsp;&nbsp;<FaSearch style={{marginBottom:"0px"}} />&nbsp;&nbsp;&nbsp;&nbsp;</div>
                 </div>
-                <div className="headTop2">
+                <div className="headTop2 testing">
                     <img className="logo1" src={logo1} />
                     <div className="logo2Box">
                         <VscLocation style={{opacity:"0.5"}} className="logo" />
@@ -159,7 +178,7 @@ class homePage extends React.Component{
                         <p className="logoText"><span className="logoText1">EMAIL US NOW</span><br/><span className="logoText2">SITENAME@EMAIL.COM</span></p>
                     </div>
                 </div>
-                <div className="slidesContainer"  >
+                <div className="slidesContainer testing">
                     <div className="mySlides headTop3Top">
                         <div className="headTop3">
                             <div className="headTop31 ht3"><p className="navText1 navText">HOME</p></div>
@@ -192,57 +211,57 @@ class homePage extends React.Component{
                         <div className="readMore2">READ MORE <BsFillForwardFill /></div>
                     </div>
                 </div>
-                <div className="ourServices">
+                <div className="ourServices testing">
                     <p className="ourServices1"><span style={{color:"rgb(32,46,49)"}}>OUR</span> <span style={{color:"rgb(253,194,54)"}}> SERVICES</span></p>
                     <p className="ourServices2">Claritas est etiam processus dynamicus,qui sequitur<br/>
                     mutationem consuetudium lectorum</p>
                 </div>
-                <div className="renovation">
-                    <div className="renovation1 renovationBox" style={{textAlign:"center",boxSizing:"border-box",border:"1px solid rgb(224,224,224)"}} >
+                <div className="renovation testing">
+                    <div className="renovation1 renovationBox testing" style={{textAlign:"center",boxSizing:"border-box",border:"1px solid rgb(224,224,224)"}} >
                         <img src={image3} className="renovationImage img3" />
                         <p className="renovationText1">BEST RENOVATION</p>
                         <p className="renovationText2">Claritas est etiam processus dynamicus, qui sequitur<br/>mutationem</p>
                         <p className="renovationText3">READ MORE</p>
                     </div>
-                    <div className="renovation2 renovationBox" style={{textAlign:"center",boxSizing:"border-box",border:"1px solid rgb(224,224,224)"}} >
+                    <div className="renovation2 renovationBox testing" style={{textAlign:"center",boxSizing:"border-box",border:"1px solid rgb(224,224,224)"}} >
                         <img src={image4} className="renovationImage img4"/>
                         <p className="renovationText1">BEST RENOVATION</p>
                         <p className="renovationText2">Claritas est etiam processus dynamicus, qui sequitur<br/>mutationem</p>
                         <p className="renovationText3">READ MORE</p>
                     </div>
-                    <div className="renovation3 renovationBox" style={{textAlign:"center",boxSizing:"border-box",border:"1px solid rgb(224,224,224)"}} >
+                    <div className="renovation3 renovationBox testing" style={{textAlign:"center",boxSizing:"border-box",border:"1px solid rgb(224,224,224)"}} >
                         <img src={image5} className="renovationImage img5"/>
                         <p className="renovationText1">BEST RENOVATION</p>
                         <p className="renovationText2">Claritas est etiam processus dynamicus, qui sequitur<br/>mutationem</p>
                         <p className="renovationText3">READ MORE</p>
                     </div>
                 </div>
-                <div className="freeConsultant">
-                    <div className="freeConsultant1">
+                <div className="freeConsultant testing">
+                    <div className="freeConsultant1 testing">
 
                     </div>
-                    <div className="freeConsultant2">
+                    <div className="freeConsultant2 testing">
                         <p className="consultantText1">GET YOUR FREE CONSULTANT</p>
                         <p className="consultantText2">We are a company that offers design and build services for you from initial sketches to the final construction</p>
                         <div className="consultantBox">CONTACT US <BsFillForwardFill /></div>
                     </div>
                 </div>
-                <div className="whatWeDo"> 
+                <div className="whatWeDo testing"> 
                     <p className="whatWeDo1"><span style={{color:"rgb(32,46,49)"}}>WHAT</span> <span style={{color:"rgb(253,194,54)"}}>WE DO</span></p>
                     <p className="whatWeDo2">Claritas est etiam processus dynamicus, qui sequitur<br/>mutationem consuetudium lectorum</p>
                 </div>
-                <div className="buildCategories">
-                    <div className="buildCategories1 categories" onClick={()=>this.categories("visible","notVisible","notVisible","notVisible","notVisible","colored","notColored","notColored","notColored","notColored")} ><p className="buildText"><GiClawHammer/>&nbsp;&nbsp;RENOVATION</p></div>
-                    <div className="buildCategories2 categories" onClick={()=>this.categories("notVisible","visible","notVisible","notVisible","notVisible","notColored","colored","notColored","notColored","notColored")} ><p className="buildText"><RiPencilRuler2Fill/>&nbsp;&nbsp;ARCHITECT</p></div>
-                    <div className="buildCategories3 categories" onClick={()=>this.categories("notVisible","notVisible","visible","notVisible","notVisible","notColored","notColored","colored","notColored","notColored")} ><p className="buildText"><BsTriangle/>&nbsp;&nbsp;ROOFING</p></div>
-                    <div className="buildCategories4 categories" onClick={()=>this.categories("notVisible","notVisible","notVisible","visible","notVisible","notColored","notColored","notColored","colored","notColored")} ><p className="buildText"><GiLargePaintBrush/>&nbsp;&nbsp;PAINTING</p></div>
-                    <div className="buildCategories5 categories" onClick={()=>this.categories("notVisible","notVisible","notVisible","notVisible","visible","notColored","notColored","notColored","notColored","colored")} ><p className="buildText"><RiHammerLine/>&nbsp;&nbsp;PLUMBING</p></div>
+                <div className="buildCategories testing">
+                    <div className="buildCategories1 categories testing" onClick={()=>this.categories("visible","notVisible","notVisible","notVisible","notVisible","colored","notColored","notColored","notColored","notColored")} ><p className="buildText"><GiClawHammer/>&nbsp;&nbsp;RENOVATION</p></div>
+                    <div className="buildCategories2 categories testing" onClick={()=>this.categories("notVisible","visible","notVisible","notVisible","notVisible","notColored","colored","notColored","notColored","notColored")} ><p className="buildText"><RiPencilRuler2Fill/>&nbsp;&nbsp;ARCHITECT</p></div>
+                    <div className="buildCategories3 categories testing" onClick={()=>this.categories("notVisible","notVisible","visible","notVisible","notVisible","notColored","notColored","colored","notColored","notColored")} ><p className="buildText"><BsTriangle/>&nbsp;&nbsp;ROOFING</p></div>
+                    <div className="buildCategories4 categories testing" onClick={()=>this.categories("notVisible","notVisible","notVisible","visible","notVisible","notColored","notColored","notColored","colored","notColored")} ><p className="buildText"><GiLargePaintBrush/>&nbsp;&nbsp;PAINTING</p></div>
+                    <div className="buildCategories5 categories testing" onClick={()=>this.categories("notVisible","notVisible","notVisible","notVisible","visible","notColored","notColored","notColored","notColored","colored")} ><p className="buildText"><RiHammerLine/>&nbsp;&nbsp;PLUMBING</p></div>
                 </div>
-                <div className="categoriesMain1">
-                    <div className="categoriesMain12">
+                <div className="categoriesMain1 testing">
+                    <div className="categoriesMain12 testing">
                         <img src={image6} className="image6" />
                     </div>
-                    <div className="categoriesMain13">
+                    <div className="categoriesMain13 testing">
                         <p className="categoriesMain13Heading">RENOVATION SERVICES</p>
                         <p className="categoriesMain13Text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nstrud exercitation ullamco laboris nisi ut aliquip</p>
                         <div className="skill1">
@@ -252,7 +271,7 @@ class homePage extends React.Component{
                         </div>
                         <div className="skill2">
                             <div className="skill2Box">
-                               <p className="skill2Text">SKILL 2</p>
+                            <p className="skill2Text">SKILL 2</p>
                             </div>
                         </div>
                         <div className="skill3">
@@ -261,7 +280,7 @@ class homePage extends React.Component{
                             </div>
                         </div>
                     </div>
-                    <div className="categoriesMain14">
+                    <div className="categoriesMain14 testing">
                         <p className="categoriesMain141">HOW IT WORKS</p>
                         <div className="categoriesMain14Box">
                             <p className="categoriesMain14BoxText1">1</p>
@@ -277,11 +296,11 @@ class homePage extends React.Component{
                         </div>
                     </div>
                 </div>
-                <div className="categoriesMain2">
-                    <div className="categoriesMain12">
+                <div className="categoriesMain2 testing">
+                    <div className="categoriesMain12 testing">
                         <img src={image6} className="image6" />
                     </div>
-                    <div className="categoriesMain13">
+                    <div className="categoriesMain13 testing">
                         <p className="categoriesMain13Heading">ACHITECT SERVICES</p>
                         <p className="categoriesMain13Text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nstrud exercitation ullamco laboris nisi ut aliquip</p>
                         <div className="skill1">
@@ -291,7 +310,7 @@ class homePage extends React.Component{
                         </div>
                         <div className="skill2">
                             <div className="skill2Box">
-                               <p className="skill2Text">SKILL 2</p>
+                            <p className="skill2Text">SKILL 2</p>
                             </div>
                         </div>
                         <div className="skill3">
@@ -300,7 +319,7 @@ class homePage extends React.Component{
                             </div>
                         </div>
                     </div>
-                    <div className="categoriesMain14">
+                    <div className="categoriesMain14 testing">
                         <p className="categoriesMain141">HOW IT WORKS</p>
                         <div className="categoriesMain14Box">
                             <p className="categoriesMain14BoxText1">1</p>
@@ -316,11 +335,11 @@ class homePage extends React.Component{
                         </div>
                     </div>
                 </div>
-                <div className="categoriesMain3">
-                    <div className="categoriesMain12">
+                <div className="categoriesMain3 testing">
+                    <div className="categoriesMain12 testing">
                         <img src={image6} className="image6" />
                     </div>
-                    <div className="categoriesMain13">
+                    <div className="categoriesMain13 testing">
                         <p className="categoriesMain13Heading">ROOFING SERVICES</p>
                         <p className="categoriesMain13Text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nstrud exercitation ullamco laboris nisi ut aliquip</p>
                         <div className="skill1">
@@ -330,7 +349,7 @@ class homePage extends React.Component{
                         </div>
                         <div className="skill2">
                             <div className="skill2Box">
-                               <p className="skill2Text">SKILL 2</p>
+                            <p className="skill2Text">SKILL 2</p>
                             </div>
                         </div>
                         <div className="skill3">
@@ -339,7 +358,7 @@ class homePage extends React.Component{
                             </div>
                         </div>
                     </div>
-                    <div className="categoriesMain14">
+                    <div className="categoriesMain14 testing">
                         <p className="categoriesMain141">HOW IT WORKS</p>
                         <div className="categoriesMain14Box">
                             <p className="categoriesMain14BoxText1">1</p>
@@ -355,11 +374,11 @@ class homePage extends React.Component{
                         </div>
                     </div>
                 </div>
-                <div className="categoriesMain4">
-                    <div className="categoriesMain12">
+                <div className="categoriesMain4 testing">
+                    <div className="categoriesMain12 testing">
                         <img src={image6} className="image6" />
                     </div>
-                    <div className="categoriesMain13">
+                    <div className="categoriesMain13 testing">
                         <p className="categoriesMain13Heading">PAINTING SERVICES</p>
                         <p className="categoriesMain13Text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nstrud exercitation ullamco laboris nisi ut aliquip</p>
                         <div className="skill1">
@@ -369,7 +388,7 @@ class homePage extends React.Component{
                         </div>
                         <div className="skill2">
                             <div className="skill2Box">
-                               <p className="skill2Text">SKILL 2</p>
+                            <p className="skill2Text">SKILL 2</p>
                             </div>
                         </div>
                         <div className="skill3">
@@ -378,7 +397,7 @@ class homePage extends React.Component{
                             </div>
                         </div>
                     </div>
-                    <div className="categoriesMain14">
+                    <div className="categoriesMain14 testing">
                         <p className="categoriesMain141">HOW IT WORKS</p>
                         <div className="categoriesMain14Box">
                             <p className="categoriesMain14BoxText1">1</p>
@@ -394,11 +413,11 @@ class homePage extends React.Component{
                         </div>
                     </div>
                 </div>
-                <div className="categoriesMain5">
-                    <div className="categoriesMain12">
+                <div className="categoriesMain5 testing">
+                    <div className="categoriesMain12 testing">
                         <img src={image6} className="image6" />
                     </div>
-                    <div className="categoriesMain13">
+                    <div className="categoriesMain13 testing">
                         <p className="categoriesMain13Heading">PLUMBING SERVICES</p>
                         <p className="categoriesMain13Text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nstrud exercitation ullamco laboris nisi ut aliquip</p>
                         <div className="skill1">
@@ -408,7 +427,7 @@ class homePage extends React.Component{
                         </div>
                         <div className="skill2">
                             <div className="skill2Box">
-                               <p className="skill2Text">SKILL 2</p>
+                            <p className="skill2Text">SKILL 2</p>
                             </div>
                         </div>
                         <div className="skill3">
@@ -417,7 +436,7 @@ class homePage extends React.Component{
                             </div>
                         </div>
                     </div>
-                    <div className="categoriesMain14">
+                    <div className="categoriesMain14 testing">
                         <p className="categoriesMain141">HOW IT WORKS</p>
                         <div className="categoriesMain14Box">
                             <p className="categoriesMain14BoxText1">1</p>
@@ -433,8 +452,8 @@ class homePage extends React.Component{
                         </div>
                     </div>
                 </div>
-                <div className="categoriesMain"></div>
-                <div className="latestWorks">
+                <div className="categoriesMain testing"></div>
+                <div className="latestWorks testing">
                     <p className="latestWorks1"><span style={{color:"rgb(32,46,49)"}}>LATEST</span> <span style={{color:"rgb(253,194,54)"}}>WORKS</span></p>
                     <p className="latestWorks2">Claritas est etiam processus dynamicus, qui sequitur<br/>mutationem consuetudium lectorum</p>
                 </div>
@@ -654,12 +673,12 @@ class homePage extends React.Component{
                         </div>
                     </div>
                 </Slider>
-                <p className="moreWorksLink"><Link style={{color:"black"}} >SEE MORE WORKS</Link> </p>
-                <div className="awesomeTeamBox">
+                <p className="moreWorksLink testing"><Link style={{color:"black"}} >SEE MORE WORKS</Link> </p>
+                <div className="awesomeTeamBox testing">
                     <p className="awesomeTeamText1"><span style={{color:"white"}}>AWESOME</span> <span style={{color:"rgb(253,194,54)"}}>TEAM</span></p>
                     <p className="awesomeTeamText2">Claritas est etiam processus dynamicus, qui sequitur<br/>mutationem consuetudium lectorum</p>
-                    <div className="awesomeTeamPictures">
-                        <div className="awesomeTeamImg awesomeTeamImg1">
+                    <div className="awesomeTeamPictures testing">
+                        <div className="awesomeTeamImg awesomeTeamImg1 testing">
                             <div className="at1 at11"></div>
                             <img src={image12} className="image12 atImg" />
                             <div className="at2">
@@ -671,7 +690,7 @@ class homePage extends React.Component{
                                 </div>
                             </div>
                         </div>
-                        <div className="awesomeTeamImg awesomeTeamImg2">
+                        <div className="awesomeTeamImg awesomeTeamImg2 testing">
                             <div className="at1 at12"></div>
                             <img src={image13} className="image13 atImg" />
                             <div className="at2">
@@ -683,7 +702,7 @@ class homePage extends React.Component{
                                 </div>
                             </div>
                         </div>
-                        <div className="awesomeTeamImg awesomeTeamImg3">
+                        <div className="awesomeTeamImg awesomeTeamImg3 testing">
                             <div className="at1 at13"></div>
                             <img src={image14} className="image14 atImg" />
                             <div className="at2">
@@ -697,7 +716,7 @@ class homePage extends React.Component{
                         </div>
                     </div>
                 </div>
-                <div className="clientSay">
+                <div className="clientSay testing">
                     <p className="latestWorks1"><span style={{color:"rgb(32,46,49)"}}>WHAT</span> <span style={{color:"rgb(253,194,54)"}}>OUR CLIENTS</span><span style={{color:"rgb(32,46,49)"}}> SAY</span> </p>
                     <p className="latestWorks2">Claritas est etiam processus dynamicus, qui sequitur<br/>mutationem consuetudium lectorum</p>
                 </div>
@@ -728,7 +747,7 @@ class homePage extends React.Component{
                             feugiat nulia facilisi.</i>
                         </div>
                     </div>
-                    <div className="author1Box authorBox">
+                    <div className="author1Box authorBox ">
                         <div className="image20Box">
                             <img src={image20} className="image20" />
                             <div className="author1Name">JENNY DUREN</div>
@@ -755,8 +774,8 @@ class homePage extends React.Component{
                         </div>
                     </div>
                 </Slider>
-                <Slider arrows={false}  className="authorsBox authorsBox2" centerPadding="0" centerMode slidesToShow="1" slidesPerRow="1" autoplay>
-                    <div className="author1Box authorBox">
+                <Slider arrows={false}  className="authorsBox authorsBox2 " centerPadding="0" centerMode slidesToShow="1" slidesPerRow="1" autoplay>
+                    <div className="author1Box authorBox ">
                         <div className="image20Box">
                             <img src={image20} className="image20" />
                             <div className="author1Name">JENNY DUREN</div>
@@ -810,16 +829,16 @@ class homePage extends React.Component{
                     </div>
                 </Slider>
                 <div className="latestNews">
-                    <img src={image15} className="image15" />
-                    <div className="latestNewsBox">
+                    <img src={image15} className="image15 " />
+                    <div className="latestNewsBox testing">
                         <p className="latestNewsTxt1"><span style={{color:"white"}}>LATEST</span> <span style={{color:"rgb(253,194,54)"}}>NEWS</span></p>
                         <p className="latestNewsTxt2">Claritas est etiam processus dynamicus, qui sequitur<br/>mutationem consuetudium lectorum.</p>
                         <div className="latestImageBox">
-                            <div className="latestImageBox1">
+                            <div className="latestImageBox1 testing">
                                 <img src={image16} className="latestImage" />
                                 <p className="latestImageTxt1"><span className="latestImageTxt2">CLARITAS EST ETIAM<br/>PROCESSUS DYNAMICUS</span><br/><span className="latestDate">28 04, 2016</span> </p>
                             </div>
-                            <div className="latestImageBox1">
+                            <div className="latestImageBox1 testing">
                                 <img src={image17} className="latestImage" />
                                 <p className="latestImageTxt1"><span className="latestImageTxt2">CLARITAS EST ETIAM<br/>PROCESSUS DYNAMICUS</span><br/><span className="latestDate">28 04, 2016</span> </p>
                             </div>
@@ -827,7 +846,7 @@ class homePage extends React.Component{
                     </div>
                 </div>
                 <div className="retroBox">
-                    <Slider arrows={false} className="retrostyle retrostyle1" centerMode centerPadding="0" slidesToShow="7" slidesPerRow="1" autoplay>
+                    <Slider arrows={false} className="retrostyle retrostyle1 " centerMode centerPadding="0" slidesToShow="7" slidesPerRow="1" autoplay>
                         <img src={image18} className="image18" />
                         <img src={image18} className="image18" />
                         <img src={image18} className="image18" />
@@ -876,11 +895,11 @@ class homePage extends React.Component{
                         <img src={image18} className="image18" />
                     </Slider>
                 </div>
-                <div className="bottom">
-                    <div className="bottomFirst">
-                        <div className="bottomFirst1">
-                            <img src={image19} className="image19" />
-                            <p className="image19Text">
+                <div className="bottom testing">
+                    <div className="bottomFirst testing">
+                        <div className="bottomFirst1 testing">
+                            <img src={image19} className="image19 testing" />
+                            <p className="image19Text testing">
                                 Duis autem vel eum iriure dolor in<br/>
                                 hendrerit in vulputate velit esse molestie<br/>
                                 consequat, vel illum dolo re eu feugiat<br/>
@@ -888,7 +907,7 @@ class homePage extends React.Component{
                                 et iusto odio.
                             </p>
                         </div>
-                        <div className="bottomFirst2">
+                        <div className="bottomFirst2 testing">
                             <p className="firstBottomHead">IMPORTANT LINKS</p>
                             <div className="firstBottomLinks">
                                 <p className="firstBottomLink1">Themeforest</p>
@@ -898,7 +917,7 @@ class homePage extends React.Component{
                                 <p className="firstBottomLink5">Photodune</p>
                             </div>
                         </div>
-                        <div className="bottomFirst3">
+                        <div className="bottomFirst3 testing">
                             <p className="secondBottomHead">QUICK LINKS</p>
                             <div className="secondBottomLinks">
                                 <p className="secondBottomLink1">Faq</p>
@@ -908,7 +927,7 @@ class homePage extends React.Component{
                                 <p className="secondBottomLink5">Pricing</p>
                             </div>
                         </div>
-                        <div className="bottomFirst4">
+                        <div className="bottomFirst4 testing">
                             <p className="thirdBottomHead">ADDRESS</p>
                             <div className="thirdBottomLinks">
                                 <p className="thirdBottomLink1"><span style={{fontWeight:"bold"}}>HEAD OFFICE:</span>&nbsp;&nbsp;22B, Becar Street<br/>London, UK</p>
@@ -921,7 +940,7 @@ class homePage extends React.Component{
                             </div>
                         </div>
                     </div>
-                    <div className="bottomSecond">
+                    <div className="bottomSecond testing">
                         <p className="bottomSecondText">2021©All Rights Reserved by Themexriver</p>
                     </div>
                 </div>

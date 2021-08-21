@@ -48,32 +48,53 @@ class projectsPage extends React.Component{
         })
     }
 
+    componentDidMount(){
+        const callbac = function(entries){
+            entries.forEach(entry => {
+                if(entry.isIntersecting){
+                    entry.target.classList.add("opaque")
+                }
+                else{
+                    entry.target.classList.remove("opaque")
+                }
+            })
+        }
+
+        const observe = new IntersectionObserver(callbac);
+
+        const target = (document.querySelectorAll(".testing")
+        );
+        target.forEach(target =>{
+            observe.observe(target)
+        }) 
+    }
+
     render(){
         return(
             <div>
-                <div className="projectsheadTop">
+                <div className="projectsheadTop testing">
                     <div className="projectsheadTopText"><p className="projectsheadTopTextPara">WE HAVE MORE THAN 25 YEARS OF EXPERIENCES</p></div>
                     <p className="projectsnav1">SITEMAP&nbsp;&nbsp;&nbsp;&nbsp;|</p>
                     <p className="projectsnav2">&nbsp;&nbsp;&nbsp;&nbsp;QUICK LINKS&nbsp;&nbsp;&nbsp;&nbsp;|</p>
                     <p className="projectsnav3">&nbsp;&nbsp;&nbsp;&nbsp;SUPPORT&nbsp;&nbsp;&nbsp;&nbsp;|</p>
                     <div className="projectsnav4">&nbsp;&nbsp;&nbsp;&nbsp;<FaSearch style={{marginBottom:"0px"}} />&nbsp;&nbsp;&nbsp;&nbsp;</div>
                 </div>
-                <div className="projectsheadTop2">
+                <div className="projectsheadTop2 testing">
                     <img className="projectslogo1" src={logo1} alt="" />
-                    <div className="projectslogo2Box">
+                    <div className="projectslogo2Box testing">
                         <VscLocation className="projectslogo" style={{opacity:"0.5"}} />
                         <p className="projectslogoText"><span className="projectslogoText1">FIND US</span><br/><span className="projectslogoText2">22B, LONDON</span></p>
                     </div>
-                    <div className="projectslogo3Box">
+                    <div className="projectslogo3Box testing">
                         <GiSmartphone className="projectslogo" style={{opacity:"0.5"}} />
                         <p className="projectslogoText"><span className="projectslogoText1">CALL US TODAY</span><br/><span className="projectslogoText2">+000-2415-145</span></p>
                     </div>
-                    <div className="projectslogo4Box">
+                    <div className="projectslogo4Box testing">
                         <AiOutlineMail className="projectslogo" style={{opacity:"0.5"}} />
                         <p className="projectslogoText"><span className="projectslogoText1">EMAIL US NOW</span><br/><span className="projectslogoText2">SITENAME@EMAIL.COM</span></p>
                     </div>
                 </div>
-                <div className="projectsNavContainer">
+                <div className="projectsNavContainer testing">
                     <div className="projectsheadTop3">
                         <div className="projectsheadTop31 projectsht3" onClick={()=>this.homePage()} ><p className="projectsnavText1 projectsnavText">HOME</p></div>
                         <div className="projectsheadTop32 projectsht3" onClick={()=>this.aboutPage()} ><p className="projectsnavText2 projectsnavText">ABOUT</p></div>
@@ -83,14 +104,14 @@ class projectsPage extends React.Component{
                         <div className="projectsheadTop36 projectsht3" onClick={()=>this.contactUsPage()} ><p className="projectsnavText6 projectsnavText">CONTACTS</p></div>
                         <div className="projectsheadTop37"><p className="projectsnavText7">INQUERY TODAY</p></div>
                     </div>
-                    <p className="projectsUs">OUR PROJECTS</p>
-                    <p className="projectsUsInfo">
+                    <p className="projectsUs testing">OUR PROJECTS</p>
+                    <p className="projectsUsInfo testing">
                         Claritas est etiam processus dynamicus, qui sequitur<br/>
                         mutationem consuetudium lectorum.
                     </p>
                 </div>
                 <div className="projectsimagesPallete">
-                    <div className="projectsimageBox">
+                    <div className="projectsimageBox testing">
                         <img src={image7} className="projectsimg" />
                         <div className="projectsimage7SideBox1">
                             <p className="projectsimage7Text1">ROOFING WORKS</p>
@@ -104,7 +125,7 @@ class projectsPage extends React.Component{
                             +
                         </div>
                     </div>
-                    <div className="projectsimageBox">
+                    <div className="projectsimageBox testing">
                         <img src={image8} className="projectsimg" />
                         <div className="projectsimage7SideBox1">
                             <p className="projectsimage7Text1">CONSTRUCTON WORKS</p>
@@ -118,7 +139,7 @@ class projectsPage extends React.Component{
                             +
                         </div>
                     </div>
-                    <div className="projectsimageBox">
+                    <div className="projectsimageBox testing">
                         <img src={image9} className="projectsimg" />
                         <div className="projectsimage7SideBox1">
                             <p className="projectsimage7Text1">RENOVATION WORKS</p>
@@ -132,7 +153,7 @@ class projectsPage extends React.Component{
                             +
                         </div>
                     </div>
-                    <div className="projectsimageBox">
+                    <div className="projectsimageBox testing">
                         <img src={image10} className="projectsimg" />
                         <div className="projectsimage7SideBox1">
                             <p className="projectsimage7Text1">BUILDING WORKS</p>
@@ -146,7 +167,7 @@ class projectsPage extends React.Component{
                             +
                         </div>
                     </div>
-                    <div className="projectsimageBox">
+                    <div className="projectsimageBox testing">
                         <img src={image11} className="projectsimg" />
                         <div className="projectsimage7SideBox1">
                             <p className="projectsimage7Text1">ACHITECT WORKS</p>
@@ -160,7 +181,7 @@ class projectsPage extends React.Component{
                             +
                         </div>
                     </div>
-                    <div className="projectsimageBox">
+                    <div className="projectsimageBox testing">
                         <img src={image24} className="projectsimg" />
                         <div className="projectsimage7SideBox1">
                             <p className="projectsimage7Text1">ARCHITECTURE WORKS</p>
@@ -174,7 +195,7 @@ class projectsPage extends React.Component{
                             +
                         </div>
                     </div>
-                    <div className="projectsimageBox">
+                    <div className="projectsimageBox testing">
                         <img src={image25} className="projectsimg" />
                         <div className="projectsimage7SideBox1">
                             <p className="projectsimage7Text1">WOOD MAKING</p>
@@ -188,7 +209,7 @@ class projectsPage extends React.Component{
                             +
                         </div>
                     </div>
-                    <div className="projectsimageBox">
+                    <div className="projectsimageBox testing">
                         <img src={image26} className="projectsimg" />
                         <div className="projectsimage7SideBox1">
                             <p className="projectsimage7Text1">ARCHITECTURE</p>
@@ -203,21 +224,21 @@ class projectsPage extends React.Component{
                         </div>
                     </div>
                 </div>
-                <div className="projectsfreeConsultant">
-                    <div className="projectsfreeConsultant1">
+                <div className="projectsfreeConsultant testing">
+                    <div className="projectsfreeConsultant1 testing">
 
                     </div>
-                    <div className="projectsfreeConsultant2">
+                    <div className="projectsfreeConsultant2 testing">
                         <p className="projectsconsultantText1">GET YOUR FREE CONSULTANT</p>
                         <p className="projectsconsultantText2">We are a company that offers design and build projects for you from initial sketches to the final construction</p>
                         <div className="projectsconsultantBox">CONTACT US <BsFillForwardFill /></div>
                     </div>
                 </div>
-                <div className="projectsbottom">
-                    <div className="projectsbottomFirst">
-                        <div className="projectsbottomFirst1">
-                            <img src={image19} className="projectsimage19" />
-                            <p className="projectsimage19Text">
+                <div className="projectsbottom testing">
+                    <div className="projectsbottomFirst testing">
+                        <div className="projectsbottomFirst1 testing">
+                            <img src={image19} className="projectsimage19 testing" />
+                            <p className="projectsimage19Text testing">
                                 Duis autem vel eum iriure dolor in<br/>
                                 hendrerit in vulputate velit esse molestie<br/>
                                 consequat, vel illum dolo re eu feugiat<br/>
@@ -225,7 +246,7 @@ class projectsPage extends React.Component{
                                 et iusto odio.
                             </p>
                         </div>
-                        <div className="projectsbottomFirst2">
+                        <div className="projectsbottomFirst2 testing">
                             <p className="projectsfirstBottomHead">IMPORTANT LINKS</p>
                             <div className="projectsfirstBottomLinks">
                                 <p className="projectsfirstBottomLink1">Themeforest</p>
@@ -235,7 +256,7 @@ class projectsPage extends React.Component{
                                 <p className="projectsfirstBottomLink5">Photodune</p>
                             </div>
                         </div>
-                        <div className="projectsbottomFirst3">
+                        <div className="projectsbottomFirst3 testing">
                             <p className="projectssecondBottomHead">QUICK LINKS</p>
                             <div className="projectssecondBottomLinks">
                                 <p className="projectssecondBottomLink1">Faq</p>
@@ -245,7 +266,7 @@ class projectsPage extends React.Component{
                                 <p className="projectssecondBottomLink5">Pricing</p>
                             </div>
                         </div>
-                        <div className="projectsbottomFirst4">
+                        <div className="projectsbottomFirst4 testing">
                             <p className="projectsthirdBottomHead">ADDRESS</p>
                             <div className="projectsthirdBottomLinks">
                                 <p className="projectsthirdBottomLink1"><span style={{fontWeight:"bold"}}>HEAD OFFICE:</span>&nbsp;&nbsp;22B, Becar Street<br/>London, UK</p>
@@ -258,7 +279,7 @@ class projectsPage extends React.Component{
                             </div>
                         </div>
                     </div>
-                    <div className="projectsbottomSecond">
+                    <div className="projectsbottomSecond testing">
                         <p className="projectsbottomSecondText">2021©All Rights Reserved by Themexriver</p>
                     </div>
                 </div>
