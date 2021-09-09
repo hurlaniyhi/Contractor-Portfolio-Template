@@ -431,6 +431,7 @@ body,html{
 }
 .consultantBox{
     float: right;
+    cursor:pointer;
     text-align: center;
     font-weight: bold;
     width:170px;

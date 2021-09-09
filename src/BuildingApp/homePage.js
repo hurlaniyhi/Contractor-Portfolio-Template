@@ -243,7 +243,7 @@ class homePage extends React.Component{
                     <div className="freeConsultant2 testing">
                         <p className="consultantText1">GET YOUR FREE CONSULTANT</p>
                         <p className="consultantText2">We are a company that offers design and build services for you from initial sketches to the final construction</p>
-                        <div className="consultantBox">CONTACT US <BsFillForwardFill /></div>
+                        <div className="consultantBox" onClick={()=>this.contactUsPage()} >CONTACT US <BsFillForwardFill /></div>
                     </div>
                 </div>
                 <div className="whatWeDo testing"> 

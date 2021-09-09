@@ -231,7 +231,7 @@ class projectsPage extends React.Component{
                     <div className="projectsfreeConsultant2 testing">
                         <p className="projectsconsultantText1">GET YOUR FREE CONSULTANT</p>
                         <p className="projectsconsultantText2">We are a company that offers design and build projects for you from initial sketches to the final construction</p>
-                        <div className="projectsconsultantBox">CONTACT US <BsFillForwardFill /></div>
+                        <div style={{cursor:"pointer"}} onClick={()=>this.contactUsPage()} className="projectsconsultantBox">CONTACT US <BsFillForwardFill /></div>
                     </div>
                 </div>
                 <div className="projectsbottom testing">

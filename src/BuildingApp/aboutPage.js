@@ -195,7 +195,7 @@ class aboutPage extends React.Component{
                     <div className="aboutfreeConsultant2 testing">
                         <p className="aboutconsultantText1">GET YOUR FREE CONSULTANT</p>
                         <p className="aboutconsultantText2">We are a company that offers design and build services for you from initial sketches to the final construction</p>
-                        <div className="aboutconsultantBox">CONTACT US <BsFillForwardFill /></div>
+                        <div style={{cursor:"pointer"}} onClick={()=>this.contactUsPage()} className="aboutconsultantBox">CONTACT US <BsFillForwardFill /></div>
                     </div>
                 </div>
                 <div className="aboutawesomeTeamBox testing">

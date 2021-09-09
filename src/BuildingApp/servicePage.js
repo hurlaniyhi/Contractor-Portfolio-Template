@@ -152,7 +152,7 @@ class servicePage extends React.Component{
                     <div className="servicefreeConsultant2 testing">
                         <p className="serviceconsultantText1">GET YOUR FREE CONSULTANT</p>
                         <p className="serviceconsultantText2">We are a company that offers design and build services for you from initial sketches to the final construction</p>
-                        <div className="serviceconsultantBox">CONTACT US <BsFillForwardFill /></div>
+                        <div style={{cursor:"pointer"}} onClick={()=>this.contactUsPage()} className="serviceconsultantBox">CONTACT US <BsFillForwardFill /></div>
                     </div>
                 </div>
                 <div className="servicebottom testing">
